@@ -1,4 +1,4 @@
-name: 获取真实 Kconfig 配置文件
+name: 编译固件并且获取真实 Kconfig 配置文件
 
 on:
   repository_dispatch:
