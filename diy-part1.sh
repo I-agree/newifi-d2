@@ -34,5 +34,10 @@ CONFIG_TCP_CONG_BBR=y
 # CONFIG_DEFAULT_CUBIC is not set
 CONFIG_DEFAULT_BBR=y
 
+# =================================================================
+# 🔄 ZRAM 内存压缩
+# =================================================================
+CONFIG_ZRAM=y
+
 EOF
 echo "✅ 内核参数注入完成"
