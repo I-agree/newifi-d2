@@ -1,6 +1,6 @@
 
 config system
-	option hostname 'H29K'
+	option hostname 'Newifi-d2'
 	option timezone 'CST-8'
 	option zonename 'Asia/Shanghai'
 	option ttylogin '0'
