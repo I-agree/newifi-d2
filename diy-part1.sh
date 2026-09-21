@@ -17,3 +17,20 @@
 echo 'src-git helloworld https://github.com/fw876/helloworld' >>feeds.conf.default
 #echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall' >>feeds.conf.default
 git clone --depth=1 https://github.com/laipeng668/luci-app-gecoosac package/luci-app-gecoosac
+
+# ======================== 【主线内核配置合并注入】 ========================
+CONFIG_FILE="target/linux/ramips/mt7621/config-6.18"
+
+echo "📝 正在精准注入内核配置到: $CONFIG_FILE"
+cat >> "$CONFIG_FILE" << 'EOF'
+# =================================================================
+# 🔄 TCP BBR + FQ
+# =================================================================
+CONFIG_NET_SCHED=y
+CONFIG_NET_SCH_DEFAULT=y
+CONFIG_NET_SCH_FQ=y
+CONFIG_DEFAULT_FQ=y
+CONFIG_TCP_CONG_ADVANCED=y
+CONFIG_TCP_CONG_BBR=y
+# CONFIG_DEFAULT_CUBIC is not set
+CONFIG_DEFAULT_BBR=y
