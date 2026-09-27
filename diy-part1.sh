@@ -23,18 +23,6 @@ CONFIG_FILE="target/linux/ramips/mt7621/config-6.18"
 echo "📝 正在精准注入内核配置到: $CONFIG_FILE"
 cat >> "$CONFIG_FILE" << 'EOF'
 # =================================================================
-# 🔄 TCP BBR + FQ
-# =================================================================
-CONFIG_NET_SCHED=y
-CONFIG_NET_SCH_DEFAULT=y
-CONFIG_NET_SCH_FQ=y
-CONFIG_DEFAULT_FQ=y
-CONFIG_TCP_CONG_ADVANCED=y
-CONFIG_TCP_CONG_BBR=y
-# CONFIG_DEFAULT_CUBIC is not set
-CONFIG_DEFAULT_BBR=y
-
-# =================================================================
 # 🔄 ZRAM 内存压缩
 # =================================================================
 CONFIG_ZRAM=y
