@@ -68,4 +68,3 @@ config server
 	option enabled '1'
 	option name '腾讯DNS IPv6'
 	option ip '2402:4e00::'
-
